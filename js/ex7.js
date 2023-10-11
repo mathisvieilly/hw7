@@ -1,5 +1,11 @@
-const firstNumber = prompt("Enter a number");
-const secondNumber = prompt("Enter another number");
+let firstNumber = prompt("Enter a number");
+let secondNumber = prompt("Enter another number");
+
+while (firstNumber === null || secondNumber === null) {
+  alert("You must enter a number");
+  firstNumber = prompt("Enter a number");
+  secondNumber = prompt("Enter another number");
+}
 
 const p = document.createElement("p");
 const span = document.createElement("span");
