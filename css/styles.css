@@ -1,3 +1,11 @@
 * {
   font-family: 'Calibri';
 }
+
+.row {
+  text-align: center;
+}
+
+.row-highlight-background {
+  background-color: lightblue;
+}
