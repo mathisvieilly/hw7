@@ -9,3 +9,8 @@
 .row-highlight-background {
   background-color: lightblue;
 }
+
+.highlight-text {
+  color: red;
+  font-weight: bold;
+}
