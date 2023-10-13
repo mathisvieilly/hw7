@@ -1,9 +1,37 @@
-const makeParagraphsBold = () => {
-  const paragraphs = document.querySelectorAll('p');
-  paragraphs.forEach(paragraph => {
-      paragraph.style.fontWeight = 'bold';
-      paragraph.style.backgroundColor = 'yellow';
-  });
-}
+// Country list
+const countryList = [
+  "Afghanistan",
+  "Albania",
+  "Algeria",
+  "Andorra",
+  "Angola",
+  "Anguilla",
+  "Antarctica",
+  "Antigua-and-Barbuda",
+  "Argentina",
+  "Armenia",
+  "Aruba",
+  "Australia",
+  "Autria",
+  "Azerbaïjan",
+];
 
-makeParagraphsBold();
+const input = document.getElementById("country");
+
+const suggestions = document.getElementById("suggestions");
+
+input.addEventListener("input", () => {
+  const value = input.value;
+  suggestions.innerHTML = "";
+  if (value.length > 0) {
+    const filteredCountries = countryList.filter((country) => {
+      return country.toLowerCase().startsWith(value.toLowerCase());
+    });
+
+    filteredCountries.forEach((country) => {
+      const suggestion = document.createElement("div");
+      suggestion.innerText = country;
+      suggestions.appendChild(suggestion);
+    });
+  }
+});
